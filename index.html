@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="input-container">
+      <h1>To Do List</h1>
+      <div class="todo-input-grid">
+        <input class="js-todo-input todo-input" placeholder="Todo name" />
+        <input type="date" class="js-todo-due-date todo-due-date" />
+        <div class="todo-input-grid-buttons">
+          <button
+            onclick="
+    todo();
+  "
+            class="todo-add-button"
+          >
+            Add
+          </button>
+          <button
+            onclick="resetTodoList();"
+            class="reset-button"
+            title="Resets Todo List"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="display-container js-display-container"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
