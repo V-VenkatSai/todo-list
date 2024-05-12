@@ -23,7 +23,8 @@ body {
 
 .input-container .todo-input-grid {
   display: grid;
-  gap:8px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap:10px;
 }
 
 .display-container {
