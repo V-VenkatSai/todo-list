@@ -4,41 +4,44 @@ function todo() {
   const id = (Math.random().toFixed(10) * 10000000000).toFixed(0);
   const inputValue = document.querySelector(".js-todo-input").value;
   const date = document.querySelector(".js-todo-due-date").value;
-
   if (inputValue) {
     todoArray.push({
       id,
       inputValue,
       date,
     });
-
     saveToStorage();
     todoList();
   } else {
     alert("Enter todo input");
   }
 }
+
 function saveToStorage() {
   localStorage.setItem("todoArr", JSON.stringify(todoArray));
 }
 
 todoList();
+
 function todoList() {
   let html = "";
   todoArray.forEach((item) => {
     html += `
-    <div class="js-todo-list-div todo-list-grid">
-<div class="display-input-value js-input-value-${item.id}" value=${item.inputValue}>
-${item.inputValue}
-</div>
-<div>
+<div class="js-todo-list-div todo-list-grid">
+  <div class="display-input-value js-input-value-${item.id}" value=${item.inputValue}>
+  ${item.inputValue}
+  </div>
+  <div>
   ${item.date}
   </div>
-  <div class="todo-list-grid-buttons"><button class="todo-edit-button js-todo-edit-button" data-value-id=${item.id} data-input-value=${item.inputValue}>Edit</button>
-  <button class="delete-todo-button js-delete-todo-button" data-value-id=${item.id} >Delete</button></div>
+  <div class="todo-list-grid-buttons">
+  <button class="todo-edit-button js-todo-edit-button" data-value-id=${item.id} data-input-value=${item.inputValue}>Edit</button>
+  <button class="delete-todo-button js-delete-todo-button" data-value-id=${item.id} >Delete</button>
   </div>
+</div>
 `;
   });
+  
   document.querySelector(".js-display-container").innerHTML = html;
 
   document.querySelectorAll(".js-todo-edit-button").forEach((button) => {
@@ -74,7 +77,7 @@ ${item.inputValue}
 
 function resetTodoList() {
   if (todoArray.length != 0) {
-    const confirmation = confirm("Do you wish to reset the list");
+    const confirmation = confirm("Do you want to reset the list");
     if (confirmation) {
       localStorage.removeItem("todoArr");
       todoArray = [];
