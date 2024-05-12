@@ -23,8 +23,7 @@ body {
 
 .input-container .todo-input-grid {
   display: grid;
-  grid-template-columns: 250px 150px 225px;
-  column-gap: 5px;
+  gap:8px;
 }
 
 .display-container {
@@ -58,13 +57,13 @@ body {
 .todo-input-grid .todo-input-grid-buttons {
   display: flex;
   flex-direction: row;
-  gap: 6px;
+  gap: 5px;
 }
 
 @media screen and (max-width: 650px) {
   .input-container .todo-input-grid {
     grid-template-columns: none;
-    width: 95%;
+    width: 98%;
     gap: 10px;
   }
 
